@@ -1,0 +1,7 @@
+### Container Volumne
+webapps/
+### VS Code ###
+.vscode/
+bin/
+### MacOS ###
+.DS_Store

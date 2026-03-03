@@ -102,7 +102,8 @@ public class BasicServlet extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-		questionnaireRepository = new QuestionnaireInitializer().initRepoWithTestData();
+		questionnaireRepository = (QuestionnaireRepository) config.getServletContext()
+				.getAttribute("questionnaireRepository");
 	}
 
 }
