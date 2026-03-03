@@ -1,0 +1,32 @@
+plugins {
+	id 'java'
+	id 'war'
+}
+
+group = 'ch.fhnw.webfr'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+war {
+	archiveBaseName = 'flashcard-basic'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly 'org.apache.tomcat:tomcat-servlet-api:11.0.10'
+	// JUnit
+	testImplementation(platform("org.junit:junit-bom:5.13.4"))
+	testImplementation("org.junit.jupiter:junit-jupiter")
+	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

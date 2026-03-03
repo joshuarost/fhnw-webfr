@@ -1,0 +1,10 @@
+services:
+  tomcat:
+    image: tomcat:jre21
+    container_name: tomcat
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
+      
